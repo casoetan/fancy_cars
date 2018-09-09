@@ -1,0 +1,3 @@
+rootProject.name = 'fancy_cars'
+
+include ':app'
