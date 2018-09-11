@@ -1,19 +1,20 @@
 const apiServer = 'http://localhost:3000'
 
-export const getCars = () => apiFetch('cars')
-export const getCar = (id: number) => apiFetch(`cars/${is}`)
+export const getCars = (page=1) => apiFetch('cars', page)
 
-export const getAvailabilities = () => apiFetch('availability')
-export const getCarAvailability = (id: number) => apiFetch(`availability?id=${id}`)
+export const getAvailabilities = (page=1) => apiFetch('availability', page)
 
-const apiFetch = async (url: string) => {
+const apiFetch = async (link, page=1) => {
   const headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json'
   }
 
+  const limit = 20
+  const url = `${apiServer}/${link}?_page=${page}&_limit=${limit}`
+
   try {
-    const response = await fetch(`${apiServer}/${url}`, { headers })
+    const response = await fetch(url, { headers })
     return await response.json()
   } catch (error) {
     console.error(error)
