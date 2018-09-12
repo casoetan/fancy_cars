@@ -2,8 +2,6 @@ import { createAction } from 'redux-actions'
 
 import * as actions from './actions'
 
-// Actions
-export const ping = createAction(actions.PING)
 export const loading = createAction(actions.LOADING)
 
 export const getCars = createAction(actions.GET_CARS)

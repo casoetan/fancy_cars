@@ -1,20 +1,14 @@
-import {
-  AppFontSize,
-  AppFontStyle,
-  AppType,
-} from './fonts'
+import { AppFontSize, AppFontStyle } from './fonts'
 import { AppMetrics } from './metrics'
 import { AppColors } from './colors'
 
 export const AppStyles = {
   mainContainer: {
     flex: 1,
-    marginTop: AppMetrics.doubleBaseMargin,
     backgroundColor: AppColors.transparent,
   },
   container: {
     flex: 1,
-    marginTop: AppMetrics.navBarHeight,
   },
   loadingContainer: {
     position: 'absolute',
@@ -42,17 +36,24 @@ export const AppStyles = {
     itemContent: {
       flex: 1,
       flexDirection: 'column',
-      justifyContent: 'center',
-      padding: AppMetrics.smallMargin,
+      padding: AppMetrics.baseMargin,
+    },
+    itemIcon: {
+      marginRight: AppMetrics.tinyMargin,
     },
     title: {
       fontSize: AppFontSize.h6,
       color: AppColors.darkBlue,
-      marginBottom: AppMetrics.tinyMargin,
+      marginBottom: AppMetrics.smallMargin,
+    },
+    metaContainer: {
+      flex: 1,
+      flexDirection: 'row',
     },
     meta: {
-      fontSize: AppFontSize.medium,
+      fontSize: AppFontSize.small,
       color: AppColors.charcoal,
+      paddingRight: AppMetrics.baseMargin,
     }
   },
   detail: {
@@ -73,39 +74,26 @@ export const AppStyles = {
       paddingLeft: 20,
       paddingBottom: 20
     },
+    headerContainer: {
+      borderRadius: 5,
+      marginBottom: 4,
+      padding: 4,
+    },
+    metaContainer: {
+      flex: 1,
+      justifyContent: 'space-around',
+      backgroundColor: AppColors.frost,
+      padding: 20,
+    },
+    meta: {
+      ...AppFontStyle.normal,
+      color: AppColors.coal,
+      paddingBottom: 10,
+    },
+    buyButton: {
+      backgroundColor: AppColors.silver,
+      flex: 1,
+      justifyContent: 'center',
+    }
   },
-  section: {
-    margin: AppMetrics.section,
-    padding: AppMetrics.baseMargin,
-    borderTopColor: AppColors.frost,
-    borderTopWidth: 0.5,
-    borderBottomColor: AppColors.frost,
-    borderBottomWidth: 1
-  },
-  darkLabelContainer: {
-    backgroundColor: AppColors.cloud,
-    padding: AppMetrics.smallMargin
-  },
-  darkLabel: {
-    fontFamily: AppType.bold,
-    color: AppColors.snow
-  },
-  groupContainer: {
-    margin: AppMetrics.smallMargin,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center'
-  },
-  sectionTitle: {
-    ...AppFontStyle.h4,
-    color: AppColors.coal,
-    backgroundColor: AppColors.ricePaper,
-    padding: AppMetrics.smallMargin,
-    marginTop: AppMetrics.smallMargin,
-    marginHorizontal: AppMetrics.baseMargin,
-    borderWidth: 1,
-    borderColor: AppColors.charcoal,
-    alignItems: 'center',
-    textAlign: 'center'
-  }
 }

@@ -5,7 +5,7 @@ import {
   takeLatest
 } from 'redux-saga/effects'
 
-import * as api from "App/api";
+import * as api from "App/api"
 
 import {
   getAvailabilities,
@@ -14,7 +14,7 @@ import {
   getCarsFailed,
   getCarsSuccess,
   loading,
-} from './actionCreators';
+} from './actionCreators'
 import * as actions from './actions'
 
 function* fetchCars(action) {

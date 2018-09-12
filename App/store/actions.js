@@ -1,5 +1,4 @@
 // Actions Constant
-export const PING = 'ping'
 export const LOADING = 'app: loading'
 
 export const GET_CARS = 'app: get cars'

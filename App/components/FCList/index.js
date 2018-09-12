@@ -2,16 +2,15 @@ import React, { PureComponent } from 'react'
 import { FlatList, View, Text } from 'react-native'
 
 import { FCListItem } from 'App/components/FCListItem'
-
 import { AppStyles } from 'App/theme'
 
 export class FCList extends PureComponent {
   _keyExtractor = car => `car-${car.id}`
 
   _onEndReached = () => {
-    if (!this.canAction) return;
+    if (!this.canAction) return
     this.props.getMoreCars()
-  };
+  }
 
   _renderCar = car => (
     <FCListItem

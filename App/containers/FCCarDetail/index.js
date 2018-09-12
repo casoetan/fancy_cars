@@ -1,9 +1,8 @@
-import React, { PureComponent } from 'react';
-import { View } from 'react-native';
+import React, { PureComponent } from 'react'
+import { View } from 'react-native'
 import { connect } from 'react-redux'
 
 import { FCDetail } from 'App/components'
-
 import { AppStyles } from 'App/theme'
 
 class FCCarDetail extends PureComponent {

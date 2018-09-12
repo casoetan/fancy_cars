@@ -24,7 +24,7 @@ export const AppFontStyle = {
     fontSize: AppFontSize.h1
   },
   h2: {
-    fontWeight: 'bold',
+    fontWeight: AppType.bold,
     fontSize: AppFontSize.h2
   },
   h3: {
@@ -51,8 +51,4 @@ export const AppFontStyle = {
     fontFamily: AppType.base,
     fontSize: AppFontSize.medium,
   },
-  descriptionContainer: {
-    padding: 4,
-    borderRadius: 5,
-  }
 }

@@ -3,11 +3,11 @@ import { handleActions } from 'redux-actions'
 import * as actions from './actions'
 
 const initialState = {
-  loading: false,
-  currentLoadedCars: [],
   cars: [],
-  selectedCar: null,
+  currentLoadedCars: [],
+  loading: false,
   resultPage: 1,
+  selectedCar: null,
 }
 
 const rootReducer = handleActions(
@@ -43,10 +43,7 @@ const rootReducer = handleActions(
             return state.defaultCarOrder
         }
       })
-      return {
-        ...state,
-        cars
-      }
+      return { ...state, cars }
     },
 
     [actions.GET_AVAILABILITIES_SUCCESS]: (state, action) => {

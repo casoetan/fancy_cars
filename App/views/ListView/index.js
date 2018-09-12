@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { View } from 'react-native'
+import { SafeAreaView } from 'react-native'
 
 import { FCCarListContainer } from 'App/containers'
 import { DetailView } from 'App/views/DetailView'
@@ -17,9 +17,9 @@ export class ListView extends PureComponent {
 
   render() {
     return (
-      <View style={AppStyles.mainContainer}>
+      <SafeAreaView style={AppStyles.mainContainer}>
         <FCCarListContainer navigator={this._viewDetails} />
-      </View>
+      </SafeAreaView>
     )
   }
 }
