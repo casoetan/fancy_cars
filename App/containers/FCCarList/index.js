@@ -1,8 +1,13 @@
 import React, { Fragment, PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { NetInfo } from 'react-native'
 
-import { getCars, selectCar } from 'App/store/actionCreators'
+import {
+  getCars,
+  saveReduxStateOffline,
+  selectCar,
+} from 'App/store/actionCreators'
 import { FCList, FCLoader } from 'App/components'
 
 class FCCarList extends PureComponent {
@@ -13,8 +18,15 @@ class FCCarList extends PureComponent {
 
   _getNextCars = () => {
     const { actions, state } = this.props
-    if (!state.loading) {
+    if (!state.loading && state.online) {
       actions.getCars(state.resultPage)
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { actions, state } = this.props
+    if (state.cars !== prevProps.state.cars && state.online) {
+      actions.saveReduxStateOffline(state.cars)
     }
   }
 
@@ -24,6 +36,7 @@ class FCCarList extends PureComponent {
       actions.getCars(state.resultPage)
     }
   }
+
   render() {
     const { state } = this.props
     return (
@@ -43,7 +56,11 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({ getCars, selectCar }, dispatch)
+  actions: bindActionCreators({
+    getCars,
+    saveReduxStateOffline,
+    selectCar,
+  }, dispatch)
 })
 
 export const FCCarListContainer = connect(mapStateToProps, mapDispatchToProps)(FCCarList)

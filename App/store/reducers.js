@@ -4,6 +4,7 @@ import * as actions from './actions'
 
 const initialState = {
   cars: [],
+  online: false,
   currentLoadedCars: [],
   loading: false,
   resultPage: 1,
@@ -56,12 +57,24 @@ const rootReducer = handleActions(
       )
 
       const nextPage = action.payload.length > 0 ? state.resultPage + 1 : state.resultPage
+      const cars = state.resultPage === 1 ? carsWithAvailability : state.cars.concat(carsWithAvailability)
 
       return {
         ...state,
         loading: false,
-        cars: state.cars.concat(carsWithAvailability),
+        online: true,
+        cars,
         resultPage: nextPage
+      }
+    },
+
+    [actions.GET_OFFLINE_DATA_SUCCESS]: (state, action) => {
+      return {
+        ...state,
+        online: false,
+        cars: action.payload,
+        currentLoadedCars: [],
+        resultPage: 1
       }
     }
   },

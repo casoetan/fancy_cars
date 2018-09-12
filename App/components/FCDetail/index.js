@@ -1,22 +1,9 @@
 import React from 'react'
-import { Alert, Button, Image, Text, View } from 'react-native'
+import { Button, Image, Text, View } from 'react-native'
 
 import { AppColors, AppFontStyle, AppStyles, AppType } from 'App/theme'
 
-const _onBuy = car => (
-  Alert.alert(
-    car.name,
-    'Ready to Buy?',
-    [
-      {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
-      {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-      {text: 'OK', onPress: () => console.log('OK Pressed')},
-    ],
-    { cancelable: false }
-  )
-)
-
-export const FCDetail = ({ car }) => (
+export const FCDetail = ({ car, onBuyCar }) => (
   <View style={{flex: 1}}>
     <View style={AppStyles.detail.imageContainer}>
       <Image
@@ -54,7 +41,7 @@ export const FCDetail = ({ car }) => (
     {car.availability && (
       <View style={AppStyles.detail.buyButton}>
         <Button
-          onPress={_onBuy}
+          onPress={onBuyCar}
           title="Buy Now"
           color={AppColors.success} />
       </View>
