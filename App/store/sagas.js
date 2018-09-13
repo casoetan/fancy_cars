@@ -62,7 +62,7 @@ function* fetchCars(action) {
     return () => NetInfo.isConnected.removeEventListener('connectionChange', emitter)
   })
   try {
-    for (; ;) {
+    while(true) { // A little hack to run when the network status changes
       const isConnected = yield take(channel)
       if (isConnected) {
         yield put(getCarsOnline(action.payload))

@@ -1,8 +1,12 @@
 # My Assumptions
 
-- Not for production
-- Will still be tested by a QA
+- The application is not ready for production and still needs QA
+  - Dev environment
+  - No need to build
 - No tests
-- Did not handle errors
-- Did not handled failed responses
-- Hack to handle on end reach being called twice. Couldn't use the latest react-native still on Sierra
+- No readme or documentation
+- No errors / errors are not handled
+- API is 100% available
+- Limit libraries except very crucial ones (like Redux & Redux Saga)
+- Not testing UI/UX skills
+- Use plain Javascript (No Typescript, Flow)

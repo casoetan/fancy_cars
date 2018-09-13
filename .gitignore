@@ -55,3 +55,6 @@ buck-out/
 # VSCode
 .vscode
 .sonarlint
+
+# vim
+tags

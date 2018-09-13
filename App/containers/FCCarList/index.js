@@ -1,7 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { NetInfo } from 'react-native'
 
 import {
   getCars,
