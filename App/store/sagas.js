@@ -64,10 +64,14 @@ function* fetchCars(action) {
   try {
     while(true) { // A little hack to run when the network status changes
       const isConnected = yield take(channel)
-      if (isConnected) {
-        yield put(getCarsOnline(action.payload))
-      } else {
-        yield put(getOfflineData())
+      try {
+        if (isConnected) {
+          yield put(getCarsOnline(action.payload))
+        } else {
+          yield put(getOfflineData())
+        }
+      } catch (error) {
+        yield put(getCarsFailed(error))
       }
     }
   } finally {

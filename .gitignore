@@ -58,3 +58,7 @@ buck-out/
 
 # vim
 tags
+
+# others
+token
+todo.md

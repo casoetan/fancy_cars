@@ -1,12 +1,19 @@
-# My Assumptions
+# Assumptions
 
-- The application is not ready for production and still needs QA
-  - Dev environment
-  - No need to build
+- The application is not for production
+  - For dev environment
 - No tests
-- No readme or documentation
-- No errors / errors are not handled
-- API is 100% available
-- Limit libraries except very crucial ones (like Redux & Redux Saga)
-- Not testing UI/UX skills
-- Use plain Javascript (No Typescript, Flow)
+- No documentation
+- Errors are not handled
+- API will be 100% available
+- Limit libraries usage except the special ones ;)
+
+  - Redux & React Redux
+  - Redux Saga
+  - Redux Actions
+  - React Native Vector Icons
+
+- Minimal design
+- Plain Javascript nothing fancy like Typescript or Flow
+- The images aren't cars
+- The make, models and year are also random text
